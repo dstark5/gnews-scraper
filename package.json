@@ -1,0 +1,31 @@
+{
+  "name": "gnews-scraper",
+  "version": "1.0.5",
+  "description": "GNewsScraper is a TypeScript package that scrapes article data from Google News based on a keyword or phrase. It returns the results as an array of JSON objects, making it convenient to access and use the scraped information",
+  "main": "build/index.js",
+  "type": "module",
+  "homepage": "https://github.com/dine-5h/gnews-scraper",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dine-5h/gnews-scraper.git"
+  },
+  "author": "dine-5h",
+  "scripts": {
+    "build": "npx tsc -p tsconfig.json",
+    "start": "node build/index.js",
+    "dev": "nodemon -x ts-node --esm src/index.ts"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "got": "11.8.6",
+    "node-cache": "^5.1.2",
+    "nodemon": "^2.0.22",
+    "p-limit": "^4.0.0",
+    "puppeteer": "^20.7.2"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}

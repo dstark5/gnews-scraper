@@ -1,0 +1,129 @@
+# GNews Scraper
+
+GNewsScraper is a TypeScript package that scrapes article data from Google News based on a keyword or phrase. It returns the results as an array of JSON objects, making it convenient to access and use the scraped information.
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Options](#options)
+- [Output](#output)
+- [Contribute](#contribute)
+- [Issues](#issues)
+
+## Installation
+
+```sh
+ npm install GNewsScraper
+```
+
+**Warning:** This package is native [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) and no longer provides a CommonJS export. If your project uses CommonJS, you will have to [convert to ESM](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) or use the [dynamic `import()`](https://v8.dev/features/dynamic-import) function. Please don't open issues for questions regarding CommonJS / ESM.
+## Usage
+
+
+```javascript
+// Import the package
+import GNews from 'gnews-scraper';
+
+// Execute within an async function, pass a options object (further documentation below)
+const news=await GNews({
+    searchQuery:"Nasdaq",
+    prettyUrl:true,
+    cache:true,
+    cacheTTL:3600,
+    timeframe:'7d',
+    queryParams: {
+        hl:"en-US",
+        gl:"US",
+        ceid:"US:en"
+    }
+})
+
+console.log(news)
+```
+## Options
+
+The options provided for configuring the behavior of the GNewsScraper has the following properties:
+
+**searchQuery (required)**
+
+Specifies the search term or keyword to find articles related to.
+
+**prettyUrl (optional)**
+
+Determines whether the scraper should follow redirects and retrieve the actual "pretty" URL of each article. Enabling this feature may impact the performance of the scraper due to additional HTTP requests.
+
+***without prettyUrl :***
+
+```js
+https://news.google.com/articles/CBMiZ2h0dHBzOi8vd3d3Lm5hc2RhcS5jb20vYXJ0aWNsZXMvZm9yZXgtZG9sbGFyLWZpcm1zLWFtaWQtc3VwcG9ydGl2ZS11LnMuLWRhdGEtc3dlZGlzaC1jcm93bi1hdXNzaWUtc2xpZGXSAQA?hl=en-US&gl=US&ceid=US%3Aen
+```
+
+***with prettyUrl :***
+
+```js
+https://www.nasdaq.com/articles/forex-dollar-firms-amid-supportive-u.s.-data-swedish-crown-aussie-slide
+```
+
+**cache (optional)**
+
+Indicates whether the scraper should cache the results to improve efficiency and reduce the number of requests to Google News. Using cache prevents blocking of IP by google news.
+
+*default:false*
+
+**cacheTTL (optional)**
+
+Specifies the time-to-live (TTL) duration in seconds for the cached results. After the TTL expires, the scraper will fetch fresh results from Google News.
+
+*default:3600*
+
+**timeframe (optional)** 
+
+Filters the results to articles published within a specific timeframe before the request. 
+
+*default:'7d'*
+
+The format of the timeframe is a string comprised of a number :
+
+* h = hours (eg: `1h`)
+
+* d = days (eg: `1d` , `7d`)
+
+* y = years (eg: `1y`)
+
+
+
+**queryParams (optional)**
+
+Additional query parameters to include in the URL when performing the search.
+
+* **hl** - represents the language (English-US)
+
+* **gl** - represents the country (US)
+
+* **ceid** - represents the country-specific identifier.
+## Output
+
+The output is an array of JSON objects as mentioned below :
+
+```json
+
+[
+  {
+    title: 'Nasdaq to transfer European power business to EEX bourse',
+    articleUrl: 'https://www.reuters.com/business/energy/nasdaq-transfer-european-power-business-eex-bourse-2023-06-20/',
+    sourceName: 'Reuters.com',
+    imageUrl: 'https://lh3.googleusercontent.com/proxy/khH_YuxJvTa6rmavuuRIHG6JPu3_YD5b_jPjHZGn3t-5pfMORfSHJcuuTVCPdgRK8U_uD81JpOCFVe2YUpEGmhGNAEkm49VGoLgiKuDi2PZec-J4InGcSMtw4YIC5dwBcxngzUPv9MFK01fK3vl3ESvL8KF__Vs=s0-w100-h100-rw-dckaGU07gH',
+    time: '19 hours ago'
+  },
+ ...
+]
+
+```
+## Upkeep
+
+Please note that this is a web-scraper, which relies on DOM selectors, so any fundamental changes in the markup on the Google News site will probably break this tool. I'll try my best to keep it up-to-date, but changes to the markup on Google News will be silent and therefore difficult to keep track of. Feel free to submit an issue if the tool stops working.
+## Contribute
+
+Feel free to [submit a PR](https://github.com/dine-5h/gnews-scraper/pulls) if you've fixed an open issue.
+## Issues
+
+Please report bugs via the [issue tracker](https://github.com/dine-5h/gnews-scraper/issues).

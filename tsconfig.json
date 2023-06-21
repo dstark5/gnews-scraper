@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                                  
+    "module": "ESNext",                               
+    "rootDir": "./src",                                  
+    "baseUrl": "./src",                                                    
+    "outDir": "./build", 
+    "moduleResolution":"node",                                
+    "noEmitOnError": true,                            
+    "esModuleInterop": true,                             
+    "forceConsistentCasingInFileNames": true,            
+    "strict": true,                                     
+    "noImplicitThis": false,                           
+    "useUnknownInCatchVariables": false,               
+    "skipLibCheck": true ,
+    "removeComments": true,
+    "declaration":true,
+    "sourceMap": true                             
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "tests"
+  ] 
+}
