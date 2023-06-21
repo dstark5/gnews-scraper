@@ -1,6 +1,6 @@
 {
   "name": "gnews-scraper",
-  "version": "1.0.5",
+  "version": "1.1.5",
   "description": "GNewsScraper is a TypeScript package that scrapes article data from Google News based on a keyword or phrase. It returns the results as an array of JSON objects, making it convenient to access and use the scraped information",
   "main": "build/index.js",
   "type": "module",
@@ -27,5 +27,33 @@
   "devDependencies": {
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
-  }
+  },
+  "keywords":[
+    "gnews-scraper",
+    "Google News scraper",
+    "news scraper",
+    "scraping",
+    "web scraping",
+    "google news",
+    "data extraction",
+    "news articles",
+    "news headlines",
+    "news API",
+    "Google News API",
+    "web crawling",
+    "content aggregation",
+    "news aggregator",
+    "scraping library",
+    "data scraping",
+    "npm package",
+    "news",
+    "gnews",
+    "gnews scraper",
+    "scraper",
+    "google",
+    "crawler",
+    "web crawler",
+    "news crawler",
+    "google crawler"
+  ]
 }
