@@ -104,7 +104,7 @@ Additional query parameters to include in the URL when performing the search.
 
 The output is an array of JSON objects as mentioned below :
 
-``` JSON
+```javascript
 
 [
   {
