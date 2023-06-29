@@ -4,6 +4,7 @@ GNewsScraper is a TypeScript package that scrapes article data from Google News 
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 ![Static Badge](https://img.shields.io/badge/build-passing-green)
+![GitHub issues](https://img.shields.io/github/issues/dine-5h/gnews-scraper)
 
 - [Installation](#installation)
 - [Usage](#usage)
