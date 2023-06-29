@@ -11,6 +11,13 @@ async function scraper(config:Options):Promise<NewsData[]>{
     await page.goto(url,{'waitUntil':'domcontentloaded'});
   
     await page.setViewport({width: 1080, height: 1024});
+
+    const pageUrl:string=await page.url();
+
+    if(pageUrl.startsWith('https://consent.google.com')){
+       await page.click('button[class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc LQeN7 Nc7WLe"]');
+       await page.waitForNavigation({waitUntil: 'networkidle2'});
+    }
   
     var newsData:NewsData[]=await page.evaluate(()=>{
       
