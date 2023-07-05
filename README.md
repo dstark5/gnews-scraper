@@ -4,7 +4,7 @@ GNewsScraper is a TypeScript package that scrapes article data from Google News 
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 ![Static Badge](https://img.shields.io/badge/build-passing-green)
-![GitHub issues](https://img.shields.io/github/issues/dine-5h/gnews-scraper)
+![GitHub issues](https://img.shields.io/github/issues/dstark5/gnews-scraper)
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -127,7 +127,7 @@ The output is an array of JSON objects as mentioned below :
 Please note that this is a web-scraper, which relies on DOM selectors, so any fundamental changes in the markup on the Google News site will probably break this tool. I'll try my best to keep it up-to-date, but changes to the markup on Google News will be silent and therefore difficult to keep track of. Feel free to submit an issue if the tool stops working.
 ## Contribute
 
-Feel free to [submit a PR](https://github.com/dine-5h/gnews-scraper/pulls) if you've fixed an open issue.
+Feel free to [submit a PR](https://github.com/dstark5/gnews-scraper/pulls) if you've fixed an open issue.
 ## Issues
 
-Please report bugs via the [issue tracker](https://github.com/dine-5h/gnews-scraper/issues).
+Please report bugs via the [issue tracker](https://github.com/dstark5/gnews-scraper/issues).
