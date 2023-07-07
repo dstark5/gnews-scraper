@@ -125,6 +125,7 @@ The output is an array of JSON objects as mentioned below :
 ## Upkeep
 
 Please note that this is a web-scraper, which relies on DOM selectors, so any fundamental changes in the markup on the Google News site will probably break this tool. I'll try my best to keep it up-to-date, but changes to the markup on Google News will be silent and therefore difficult to keep track of. Feel free to submit an issue if the tool stops working.
+
 ## Contribute
 
 Feel free to [submit a PR](https://github.com/dstark5/gnews-scraper/pulls) if you've fixed an open issue.
