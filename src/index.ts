@@ -15,16 +15,16 @@ export default async function GNews(options:{
         ceid?: string;
     };
   }): Promise<NewsData[]>{
-   if(cache.has(options.searchQuery)&&options.cache){ 
-    return cache.get(options.searchQuery);
+   if(cache.has(options)&&options.cache){ 
+    return cache.get(options);
    }else{
      var newsWithoutPrettyUrl=await scrapper(options);
      if(options.prettyUrl){
        var newsWithPrettyUrl=await prettyURL(newsWithoutPrettyUrl);
-       if(options.cache) cache.set(options.searchQuery,newsWithPrettyUrl,options.cacheTTL);
+       if(options.cache) cache.set(options,newsWithPrettyUrl,options.cacheTTL);
        return newsWithPrettyUrl;
      }else{
-       if(options.cache) cache.set(options.searchQuery,newsWithoutPrettyUrl,options.cacheTTL);
+       if(options.cache) cache.set(options,newsWithoutPrettyUrl,options.cacheTTL);
        return newsWithoutPrettyUrl;
      }
    }
