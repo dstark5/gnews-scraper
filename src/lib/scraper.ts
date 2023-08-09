@@ -4,7 +4,11 @@ import type {Options,NewsData,ElementType} from '../types/types';
 
 
 async function scraper(config:Options):Promise<NewsData[]>{
-    const browser = await puppeteer.launch({args:["--incognito","--no-sandbox","--single-process","--no-zygote",'--disable-dev-shm-usage',"--disable-setuid-sandbox"]});
+    const defaultArgs = ["--incognito","--no-sandbox","--single-process","--no-zygote",'--disable-dev-shm-usage',"--disable-setuid-sandbox"]
+    if(config?.proxy?.host && config?.proxy?.port){
+        defaultArgs.push(`--proxy-server=http=${config.proxy.host}:${config.proxy.port}`)
+    }
+    const browser = await puppeteer.launch({args: defaultArgs})
     const page = await browser.newPage();
 
     const url:string=serializeURL(config);
