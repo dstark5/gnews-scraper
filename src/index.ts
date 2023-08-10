@@ -14,6 +14,11 @@ export default async function GNews(options:{
         gl?: string;
         ceid?: string;
     };
+    proxy?: {
+        host?: string;
+        port?: number;
+    };
+
   }): Promise<NewsData[]>{
    if(cache.has(options)&&options.cache){ 
     return cache.get(options);

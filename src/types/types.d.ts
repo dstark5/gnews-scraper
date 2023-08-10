@@ -19,6 +19,10 @@ export interface Options {
         gl?: string;
         ceid?: string;
     };
+    proxy?: {
+        host?: string;
+        port?: number;
+    };
 }
 
 export interface Params{
