@@ -108,7 +108,7 @@ Additional query parameters to include in the URL when performing the search.
 
 **args (optional)**
 
-Additional arguements to included when launching puppeteer
+Additional arguements to included when launching puppeteer.
 
 ```javascript
 default:["--incognito",
