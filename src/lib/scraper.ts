@@ -11,14 +11,15 @@ async function scraper(config: Options): Promise<NewsData[]> {
     "--disable-dev-shm-usage",
     "--disable-setuid-sandbox",
   ];
+
+  // check for args in the config and go with the default arguements if there are not any args
+  const args = config?.args ? config.args : defaultArgs;
+
   if (config?.proxy?.host && config?.proxy?.port) {
-    defaultArgs.push(
-      `--proxy-server=http=${config.proxy.host}:${config.proxy.port}`
-    );
+    args.push(`--proxy-server=http=${config.proxy.host}:${config.proxy.port}`);
   }
-  // chack for args in the config and go with the default arguements if there are not any args
   const browser = await puppeteer.launch({
-    args: config?.args ? config.args : defaultArgs,
+    args: args,
   });
   const page = await browser.newPage();
 
