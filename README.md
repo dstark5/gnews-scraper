@@ -50,11 +50,11 @@ console.log(news)
 
 The options provided for configuring the behavior of the GNewsScraper has the following properties:
 
-**searchQuery (required)**
+### searchQuery (required)
 
 Specifies the search term or keyword to find articles related to.
 
-**prettyUrl (optional)**
+### prettyUrl (optional)
 
 Determines whether the scraper should follow redirects and retrieve the actual "pretty" URL of each article. Enabling this feature may impact the performance of the scraper due to additional HTTP requests.
 
@@ -70,7 +70,7 @@ https://news.google.com/articles/CBMiZ2h0dHBzOi8vd3d3Lm5hc2RhcS5jb20vYXJ0aWNsZXM
 https://www.nasdaq.com/articles/forex-dollar-firms-amid-supportive-u.s.-data-swedish-crown-aussie-slide
 ```
 
-**cache (optional)**
+### cache (optional)
 
 Indicates whether the scraper should cache the results to improve efficiency and reduce the number of requests to Google News. Using cache prevents blocking of IP by google news.
 
@@ -96,7 +96,7 @@ The format of the timeframe is a string comprised of a number :
 
 - y = years (eg: `1y`)
 
-**queryParams (optional)**
+### queryParams (optional)
 
 Additional query parameters to include in the URL when performing the search.
 
@@ -106,7 +106,7 @@ Additional query parameters to include in the URL when performing the search.
 
 - **ceid** - represents the country-specific identifier.
 
-**args (optional)**
+### args (optional)
 
 Additional arguements to included when launching puppeteer.
 
@@ -119,36 +119,9 @@ default:["--incognito",
 "--disable-setuid-sandbox"]
 ```
 
-Available arguements
+**Available arguements**
 
-```javascript
-[
-  "--no-sandbox", // Disable sandboxing for better compatibility
-  "--disable-setuid-sandbox", // Disable setuid sandbox
-  "--disable-infobars", // Disable the infobar that displays browser automation
-  "--single-process", // Use a single process (can reduce resource usage)
-  "--no-zygote", // Do not use zygote process for spawning child processes
-  "--no-first-run", // Skip first-run wizards (e.g., Chrome welcome page)
-  "--window-position=0,0", // Set the initial window position
-  "--ignore-certificate-errors", // Ignore certificate errors (useful for self-signed certificates)
-  "--ignore-certificate-errors-skip-list", // Additional skip list for certificate error handling
-  "--disable-dev-shm-usage", // Disable /dev/shm usage for better stability
-  "--disable-accelerated-2d-canvas", // Disable GPU-accelerated 2D canvas
-  "--disable-gpu", // Disable GPU acceleration for headless mode
-  "--hide-scrollbars", // Hide scrollbars in the browser
-  "--disable-notifications", // Disable notifications
-  "--disable-background-timer-throttling", // Disable background timer throttling
-  "--disable-backgrounding-occluded-windows", // Disable backgrounding of occluded windows
-  "--disable-breakpad", // Disable crash reporting
-  "--disable-component-extensions-with-background-pages", // Disable background pages for component extensions
-  "--disable-extensions", // Disable browser extensions
-  "--disable-features=TranslateUI,BlinkGenPropertyTrees", // Disable specific features
-  "--disable-ipc-flooding-protection", // Disable IPC flooding protection
-  "--disable-renderer-backgrounding", // Disable backgrounding of renderers
-  "--metrics-recording-only", // Record metrics only
-  "--mute-audio", // Mute audio
-];
-```
+Check out the [full list of puppeteer flags](https://peter.sh/experiments/chromium-command-line-switches/).
 
 ## Output
 
